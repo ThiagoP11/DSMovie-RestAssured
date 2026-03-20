@@ -81,7 +81,7 @@ public class ScoreControllerRA {
 	
 	@Test
 	public void saveScoreShouldReturnUnprocessableEntityWhenScoreIsLessThanZero() throws Exception {
-		item.remove("score");
+		item.put("score", -1);
 		JSONObject score = new JSONObject(item);
 		given()
 				.header("Content-type", "application/json")
